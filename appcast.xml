@@ -4,5 +4,16 @@
     <title>Parure Updates</title>
     <link>https://github.com/gambidrissi-dev/Parure-Share</link>
     <description>Mises à jour de Parure</description>
+    <item>
+      <title>Version 1.0.0</title>
+      <pubDate>Wed, 02 Sep 2026 15:42:26 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/gambidrissi-dev/Parure-Share/releases/download/v1.0.0/Parure-1.0.0.zip"
+                 sparkle:edSignature="HUv7c96fuh2/jKPewYANAY3V38Y1jot0JbLTMz5sFyxq+BPzvriSzS+SObeQLlZ81QUgFg54PQp42bF93+EQCQ=="
+                 length="1360667"
+                 type="application/octet-stream" />
+    </item>
   </channel>
 </rss>
