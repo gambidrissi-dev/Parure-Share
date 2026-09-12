@@ -6,13 +6,18 @@
     <description>Mises à jour de Parure</description>
     <item>
       <title>Version 1.4.0</title>
-      <pubDate>Sat, 12 Sep 2026 11:50:53 +0000</pubDate>
+      <description><![CDATA[
+<h3>Habille l'app : verre, une couleur par rubrique, des mots simples</h3>
+<p>La sidebar prend la teinte de la rubrique ouverte, les panneaux passent au Liquid Glass natif avec repli sur .ultraThinMaterial en dessous de macOS 26, et les libellés techniques cèdent la place à des formulations courantes.</p>
+<p>Theme.swift rassemble le vocabulaire visuel : la palette, le modificateur panneauVerre, la Pastille et l'EtatVide, pour que les trois écrans ne redéfinissent pas chacun le leur.</p>
+      ]]></description>
+      <pubDate>Sat, 12 Sep 2026 14:31:56 +0000</pubDate>
       <sparkle:version>8</sparkle:version>
       <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
       <enclosure url="https://github.com/gambidrissi-dev/Parure-Share/releases/download/v1.4.0/Parure-1.4.0.zip"
-                 sparkle:edSignature="EG5FqaE6YW+BQNYn1xAclFPKonTKhL1dwrIod/SZ4xcda/V036mbVv9bZsBrcKBYWVXDnOYpUyIsBLiYMowACA=="
-                 length="1594645"
+                 sparkle:edSignature="OuNlf3wm5NdPayHImJ//ZS5WFAW+2vme5Kol8mBGzgi9OxAbkx8wA8BkKwmMFmWtmMnk0T5XglqXKneU8EmcCQ=="
+                 length="1594685"
                  type="application/octet-stream" />
     </item>
     <item>
