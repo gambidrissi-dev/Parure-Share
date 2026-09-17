@@ -60,6 +60,10 @@
   .steps b { color: var(--text); }
   ul.features { color: var(--muted); font-size: 0.92rem; line-height: 1.75; padding-left: 1.1rem; margin: 0; }
   ul.features b { color: var(--text); font-weight: 600; }
+  .card h2 {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--muted); margin: 0 0 1rem; font-weight: 600;
+  }
   footer { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 2rem; }
   a.plain { color: var(--accent); }
 </style>
@@ -79,11 +83,22 @@
   </div>
 
   <div class="card">
+    <h2>Icônes de dossiers</h2>
     <ul class="features">
-      <li><b>Icônes vide / plein</b> — chaque dossier surveillé change d'icône selon qu'il contient quelque chose ou non.</li>
-      <li><b>Suivi en continu</b> — les changements sont détectés en direct via FSEvents, sans rien relancer.</li>
-      <li><b>Héritage par dossier</b> — les sous-dossiers reprennent l'icône de leur parent, état par état, sauf si tu en décides autrement.</li>
-      <li><b>Fonds d'écran</b> — une bibliothèque d'images posée en un clic depuis la barre de menu.</li>
+      <li><b>Icônes vide / plein</b> — chaque dossier surveillé (et tous ses sous-dossiers) change d'icône selon qu'il contient quelque chose ou non.</li>
+      <li><b>Suivi en continu</b> — les changements sont détectés en direct via FSEvents, sans rien relancer ; l'icône se met à jour toute seule.</li>
+      <li><b>Héritage état par état</b> — un sous-dossier peut hériter le « vide » de son parent tout en ayant son propre « plein », et inversement.</li>
+      <li><b>Seuls les choix explicites sont enregistrés</b> — un arbre de 5&nbsp;000 dossiers avec 2 exceptions ne stocke que 3 entrées.</li>
+      <li><b>Rapide même sur un gros arbre</b> — grâce à un cache persistant, un lancement où rien n'a changé prend une fraction de seconde plutôt que de tout réappliquer.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Fonds d'écran</h2>
+    <ul class="features">
+      <li><b>Bibliothèque d'images</b> — dépose des images dans un dossier, elles apparaissent dans le sélecteur, aucune convention de nommage requise.</li>
+      <li><b>Pose en un clic</b> — directement depuis la barre de menu, sans ouvrir les Préférences Système.</li>
+      <li><b>Formats larges</b> — PNG, ICNS, TIFF, PSD, GIF, PDF, HEIC, BMP et SVG, tous vérifiés bout en bout (le PNG reste le plus rapide).</li>
     </ul>
   </div>
 
