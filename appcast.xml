@@ -5,6 +5,21 @@
     <link>https://github.com/gambidrissi-dev/Parure-Share</link>
     <description>Mises à jour de Parure</description>
     <item>
+      <title>Version 1.5.0</title>
+      <description><![CDATA[
+<h3>Ajoute règles par nom, atelier d'icônes, clic droit Finder et icône d'origine</h3>
+<p>- Icône d'origine : sauvegardée avant la première pose, rendue quand on retire un dossier ou qu'un état n'a plus d'icône choisie. - Finder : Services › « Habiller avec Parure » ajoute les dossiers et ramène la fenêtre sur le bureau courant. - Règles : une icône pour tous les dossiers d'un même nom (* et ?), le choix fait à la main passe devant. - Atelier : dossier système recoloré (couleur ou dégradé) + symbole, emoji ou texte, rangé en PNG dans la bibliothèque. Méthode reprise de FolderForge (MIT). - Guide de prise en main (Découvrir Parure).</p>
+      ]]></description>
+      <pubDate>Tue, 22 Sep 2026 23:11:07 +0000</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/gambidrissi-dev/Parure-Share/releases/download/v1.5.0/Parure-1.5.0.zip"
+                 sparkle:edSignature="WmoHsGLpl8C4lzyP8oKA6sioPMHadLAjAgTc93TUmUmHYB2UuT/UYVxY2y5rByHRaKRx7DXlaRsufLvQCq6mBA=="
+                 length="1764357"
+                 type="application/octet-stream" />
+    </item>
+    <item>
       <title>Version 1.4.0</title>
       <description><![CDATA[
 <h3>Habille l'app : verre, une couleur par rubrique, des mots simples</h3>
