@@ -67,6 +67,20 @@
   footer { color: var(--muted); font-size: 0.8rem; text-align: center; margin-top: 2rem; }
   a.plain { color: var(--accent); }
 </style>
+<style id="prise-en-main-css">
+  .pm-intro { color: var(--muted); font-size: 0.92rem; margin: 0 0 1.2rem; line-height: 1.6; }
+  .pm-shot { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto 1.4rem; border-radius: 12px; border: 1px solid var(--border); }
+  .pm-etapes { list-style: none; counter-reset: pm; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+  .pm-etapes li { counter-increment: pm; position: relative; padding-left: 2.6rem; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+  .pm-etapes li::before { content: counter(pm); position: absolute; left: 0; top: 0.05rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center; background: var(--accent, #ff6b1a); color: #14161a; font-weight: 700; font-size: 0.85rem; }
+  .pm-etapes b { display: block; color: var(--text); font-weight: 600; margin-bottom: 0.15rem; }
+  .pm-boutons { margin-top: 1.4rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .pm-boutons summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 0.95rem; }
+  .pm-boutons dl { margin: 1rem 0 0; display: grid; gap: 0.9rem; }
+  .pm-boutons dt { color: var(--text); font-weight: 600; font-size: 0.92rem; }
+  .pm-boutons dd { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+  .pm-boutons dd b { color: var(--text); font-weight: 600; }
+</style>
 </head>
 <body>
 <main>
@@ -86,9 +100,13 @@
     <h2>Icônes de dossiers</h2>
     <ul class="features">
       <li><b>Icônes vide / plein</b> — chaque dossier surveillé (et tous ses sous-dossiers) change d'icône selon qu'il contient quelque chose ou non.</li>
-      <li><b>Suivi en continu</b> — les changements sont détectés en direct via FSEvents, sans rien relancer ; l'icône se met à jour toute seule.</li>
+      <li><b>Suivi en continu</b> — les changements sont détectés en direct, sans rien relancer ; l'icône se met à jour toute seule.</li>
       <li><b>Héritage état par état</b> — un sous-dossier peut hériter le « vide » de son parent tout en ayant son propre « plein », et inversement.</li>
       <li><b>Seuls les choix explicites sont enregistrés</b> — un arbre de 5&nbsp;000 dossiers avec 2 exceptions ne stocke que 3 entrées.</li>
+      <li><b>Règles par nom</b> — une icône pour tous les dossiers qui s'appellent « Factures », ou « Photos* » : le motif attrape tous les noms qui commencent pareil.</li>
+      <li><b>Atelier d'icônes</b> — dessine une icône de dossier (couleur, dégradé, symbole, emoji ou texte) sans logiciel de dessin, rangée directement dans ta bibliothèque.</li>
+      <li><b>Clic droit dans le Finder</b> — Services › Habiller avec Parure, sans ouvrir l'app d'abord.</li>
+      <li><b>Icône d'origine rendue</b> — quand tu retires un dossier, il retrouve l'icône qu'il avait avant Parure.</li>
       <li><b>Rapide même sur un gros arbre</b> — grâce à un cache persistant, un lancement où rien n'a changé prend une fraction de seconde plutôt que de tout réappliquer.</li>
     </ul>
   </div>
@@ -101,6 +119,39 @@
       <li><b>Formats larges</b> — PNG, ICNS, TIFF, PSD, GIF, PDF, HEIC, BMP et SVG, tous vérifiés bout en bout (le PNG reste le plus rapide).</li>
     </ul>
   </div>
+
+  <div class="card" id="prise-en-main">
+  <h2>Prise en main</h2>
+  <p class="pm-intro">Parure a un guide de prise en main intégré : il s'ouvre au premier lancement et tu peux le rouvrir à tout moment (cherche « Découvrir »). En voici l'essentiel.</p>
+  <img class="pm-shot" src="prise-en-main.png" alt="La visite guidée de Parure" width="520" loading="lazy">
+  <ol class="pm-etapes">
+    <li><b>Glisse un dossier dans Parure</b>Dans la rubrique Dossiers, glisse un dossier (ou clique « Parcourir… », ou dans le Finder : clic droit › Services › Habiller avec Parure). Parure le surveille, lui et tous ses sous-dossiers, et change leur icône selon qu'ils sont vides ou pleins, sans rien relancer.</li>
+    <li><b>Prépare ta bibliothèque d'icônes</b>Dans Réglages, indique le dossier qui contient tes images d'icônes. Nomme-les comme tu veux : elles apparaissent ensuite quand tu cliques sur « Choisir… ». Pas d'images sous la main ? Dessines-en dans l'Atelier.</li>
+    <li><b>Vide, plein, et les sous-dossiers</b>Pour chaque dossier, choisis une icône « quand il est vide » et une « quand il a du contenu ». Les sous-dossiers reprennent celles de leur parent. Dans Règles, donne une icône à tous les dossiers d'un même nom, « Factures » par exemple.</li>
+    <li><b>Les fonds d'écran</b>Dans Fonds d'écran, règle le cadrage et l'ordre : fixe, en rotation, selon clair ou sombre, ou par créneaux horaires. Depuis les étincelles de la barre de menu, pose un fond d'un clic.</li>
+  </ol>
+  <details class="pm-boutons"><summary>Les boutons, un par un (19)</summary><dl>
+    <dt>Glisse tes dossiers ici · Parcourir…</dt><dd><b>Ce que ça fait :</b> Ajoute un dossier à surveiller. Chaque sous-dossier est suivi automatiquement.<br><b>À quoi ça sert :</b> Habiller d'un coup tout un arbre de dossiers.</dd>
+    <dt>Rechercher</dt><dd><b>Ce que ça fait :</b> Filtre l'arborescence surveillée par nom.<br><b>À quoi ça sert :</b> Retrouver un dossier dans un arbre de plusieurs centaines.</dd>
+    <dt>Choisir… (icône quand vide / quand plein)</dt><dd><b>Ce que ça fait :</b> Ouvre ta bibliothèque d'icônes pour choisir l'image du dossier dans chacun des deux états.<br><b>À quoi ça sert :</b> Voir d'un coup d'œil quels dossiers contiennent quelque chose. Un dossier est « plein » dès qu'il contient quoi que ce soit.</dd>
+    <dt>Réhériter du dossier parent</dt><dd><b>Ce que ça fait :</b> Annule le choix propre à ce dossier : il reprend l'icône de son parent.<br><b>À quoi ça sert :</b> Revenir en arrière après une exception.</dd>
+    <dt>Ne plus surveiller ce dossier</dt><dd><b>Ce que ça fait :</b> Retire le dossier de la liste et rend à chaque dossier l'icône qu'il avait avant Parure.<br><b>À quoi ça sert :</b> Arrêter d'habiller un dossier.</dd>
+    <dt>Clic droit › Services › Habiller avec Parure</dt><dd><b>Ce que ça fait :</b> Dans le Finder, ajoute les dossiers sélectionnés à Parure et ouvre la fenêtre.<br><b>À quoi ça sert :</b> Habiller un dossier sans aller le chercher depuis l'app.</dd>
+    <dt>Ajouter une règle</dt><dd><b>Ce que ça fait :</b> Dans Règles : un nom de dossier (« * » pour n'importe quels caractères) et ses deux icônes. Un choix fait à la main sur un dossier passe devant.<br><b>À quoi ça sert :</b> Habiller d'un coup tous les « Factures » ou tous les « Photos* » de tes dossiers surveillés.</dd>
+    <dt>Atelier · Ranger dans la bibliothèque</dt><dd><b>Ce que ça fait :</b> Choisis une couleur (ou un dégradé) et un motif — symbole, emoji ou texte — puis range l'icône dans ta bibliothèque.<br><b>À quoi ça sert :</b> Fabriquer une icône de dossier sans logiciel de dessin.</dd>
+    <dt>Relire l'arborescence depuis le disque</dt><dd><b>Ce que ça fait :</b> Relit tous les dossiers surveillés pour vérifier leur état.<br><b>À quoi ça sert :</b> Rattraper un changement fait pendant que Parure était fermé.</dd>
+    <dt>Révéler dans le Finder</dt><dd><b>Ce que ça fait :</b> Ouvre le dossier dans le Finder.<br><b>À quoi ça sert :</b> Aller le voir sans le chercher.</dd>
+    <dt>Cadrage</dt><dd><b>Ce que ça fait :</b> Remplir, Ajuster, Étirer ou Centrer : comment l'image occupe l'écran.<br><b>À quoi ça sert :</b> Éviter les bandes noires ou les images déformées.</dd>
+    <dt>Ordre · Pioche dans · Laquelle</dt><dd><b>Ce que ça fait :</b> L'ordre (aléatoire ou dans l'ordre), où piocher (toute la bibliothèque, tes favoris, une collection) et, pour une collection, laquelle.<br><b>À quoi ça sert :</b> Contrôler ce qui peut s'afficher en rotation.</dd>
+    <dt>Un fond par écran</dt><dd><b>Ce que ça fait :</b> Permet d'épingler une image différente sur chaque écran.<br><b>À quoi ça sert :</b> Assortir chaque moniteur à son usage.</dd>
+    <dt>Détacher</dt><dd><b>Ce que ça fait :</b> Libère un écran épinglé : il suit de nouveau le mode commun.<br><b>À quoi ça sert :</b> Revenir à un réglage commun.</dd>
+    <dt>Ajouter un créneau</dt><dd><b>Ce que ça fait :</b> Ajoute une plage horaire avec son fond d'écran, en mode « Créneaux horaires ».<br><b>À quoi ça sert :</b> Changer de fond selon l'heure de la journée.</dd>
+    <dt>L'étoile d'une vignette</dt><dd><b>Ce que ça fait :</b> Ajoute l'image à tes favoris.<br><b>À quoi ça sert :</b> Limiter la rotation à ce que tu aimes.</dd>
+    <dt>Les étincelles de la barre de menu</dt><dd><b>Ce que ça fait :</b> Ouvrent une galerie : un clic sur une vignette pose le fond d'écran.<br><b>À quoi ça sert :</b> Changer de fond sans ouvrir la fenêtre.</dd>
+    <dt>Découvrir Parure</dt><dd><b>Ce que ça fait :</b> Rouvre ce guide.<br><b>À quoi ça sert :</b> Te rafraîchir la mémoire quand tu veux.</dd>
+    <dt>Version · Rechercher une mise à jour</dt><dd><b>Ce que ça fait :</b> Affiche la version et cherche une nouvelle version tout de suite.<br><b>À quoi ça sert :</b> Ne pas attendre la vérification automatique.</dd>
+  </dl></details>
+</div>
 
   <div class="card">
     <p class="steps">
